@@ -16,7 +16,6 @@ export class TodosComponent implements OnInit {
   ngOnInit(): void {
     // callinng methods from TodoService
     this.todoService.getTodos().subscribe(todos => {
-      console.log("todo list..", todos)
       this.todos = todos
     })
   }
@@ -27,9 +26,5 @@ export class TodosComponent implements OnInit {
 
   deleteTodo(todo:Todo){
     this.todoService.deleteTodo(todo)
-  }
-
-  addTodo(todo:Todo){
-    this.todoService.addTodo(todo)
   }
 }
